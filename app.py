@@ -56,23 +56,23 @@ def agregar_vuelo():
     else:
         nuevo_vuelo["id"] = 1
     #nuevo_vuelo["id"] = datos[-1]["id"] + 1 if datos else 1
+    
+    if not nuevo_vuelo["capacidad"]:
+        nuevo_vuelo["capacidad"] = 100
+    else:
+        nuevo_vuelo["capacidad"] = int(nuevo_vuelo["capacidad"])
 
-#pruebo otra forma con .get()
-    nuevo_vuelo["capacidad"] = int(nuevo_vuelo.get("capacidad", 100))
-    nuevo_vuelo["vendidos"] = int(nuevo_vuelo.get("vendidos", 0))
+    if not nuevo_vuelo["vendidos"]:
+        nuevo_vuelo["vendidos"] = 0
+    else:
+        nuevo_vuelo["vendidos"] = int(nuevo_vuelo["vendidos"])
+    
+    #pruebo otra forma con .get()
+#    nuevo_vuelo["capacidad"] = int(nuevo_vuelo.get("capacidad", 100))
+#    nuevo_vuelo["vendidos"] = int(nuevo_vuelo.get("vendidos", 0))
+
     nuevo_vuelo["destino"] = nuevo_vuelo["destino"].lower()
     
-
-#    nuevo_vuelo["capacidad"] = int(nuevo_vuelo["capacidad"])
-#    nuevo_vuelo["vendidos"] = int(nuevo_vuelo["vendidos"])
-#    nuevo_vuelo["destino"] = nuevo_vuelo["destino"].lower()
-    
-    #me da un error
-#    if not nuevo_vuelo["capacidad"]:
-#        nuevo_vuelo["capacidad"] = int(nuevo_vuelo["capacidad": 100])
-#    if not nuevo_vuelo["vendidos"]:
-#        nuevo_vuelo["vendidos"] = int(nuevo_vuelo["vendidos": 0])
-
     #agregar a la lista
     datos.append(nuevo_vuelo)
     guardar_datos(datos)

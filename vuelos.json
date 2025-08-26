@@ -1,6 +1,14 @@
-[{
-"id": 1,
-"destino": "buenos aires",
-"capacidad": 150,
-"vendidos": 25
-}]
+[
+    {
+        "id": 1,
+        "destino": "buenos aires",
+        "capacidad": 150,
+        "vendidos": 25
+    },
+    {
+        "destino": "buenos aires",
+        "capacidad": 150,
+        "id": 2,
+        "vendidos": 0
+    }
+]
