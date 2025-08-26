@@ -10,5 +10,11 @@
         "capacidad": 150,
         "id": 2,
         "vendidos": 0
+    },
+    {
+        "destino": "sao paulo",
+        "capacidad": 120,
+        "id": 3,
+        "vendidos": 0
     }
 ]

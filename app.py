@@ -57,19 +57,19 @@ def agregar_vuelo():
         nuevo_vuelo["id"] = 1
     #nuevo_vuelo["id"] = datos[-1]["id"] + 1 if datos else 1
     
-    if not nuevo_vuelo["capacidad"]:
+    if "capacidad" not in nuevo_vuelo or not nuevo_vuelo["capacidad"]:
         nuevo_vuelo["capacidad"] = 100
     else:
         nuevo_vuelo["capacidad"] = int(nuevo_vuelo["capacidad"])
 
-    if not nuevo_vuelo["vendidos"]:
+    if "vendidos" not in nuevo_vuelo or not nuevo_vuelo["vendidos"]:
         nuevo_vuelo["vendidos"] = 0
     else:
         nuevo_vuelo["vendidos"] = int(nuevo_vuelo["vendidos"])
     
     #pruebo otra forma con .get()
-#    nuevo_vuelo["capacidad"] = int(nuevo_vuelo.get("capacidad", 100))
-#    nuevo_vuelo["vendidos"] = int(nuevo_vuelo.get("vendidos", 0))
+    #nuevo_vuelo["capacidad"] = int(nuevo_vuelo.get("capacidad", 100))
+    #nuevo_vuelo["vendidos"] = int(nuevo_vuelo.get("vendidos", 0))
 
     nuevo_vuelo["destino"] = nuevo_vuelo["destino"].lower()
     
@@ -79,6 +79,7 @@ def agregar_vuelo():
     return jsonify(nuevo_vuelo), 201
 
 # Consigna 5:
+#actualizar por id
 @app.route("/api/vuelos/<int:vuelo_id>", methods=["PUT"])
 def actualizar_vuelo(vuelo_id):
     vuelo_dato = request.get_json()
