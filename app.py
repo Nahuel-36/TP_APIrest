@@ -37,7 +37,7 @@ def obtener_vuelo(vuelo_id):
     for vuelo in datos:
         vuelo["destino"] = vuelo["destino"].title()
         if vuelo["id"] == vuelo_id:
-            return jsonify(vuelo_id) #vuelo?
+            return jsonify(vuelo) #vuelo?
     return jsonify({"error":"Vuelo no encontrado"}), 404
 
 @app.route("/api/vuelos", methods=["POST"])
