@@ -59,9 +59,9 @@ def agregar_vuelo():
     nuevo_vuelo["capicidad"] = int(nuevo_vuelo["capacidad"])
     nuevo_vuelo["vendidos"] = int(nuevo_vuelo["vendidos"])
     nuevo_vuelo["destino"] = nuevo_vuelo["destino"].lower()
-    if nuevo_vuelo["capacidad"] == nuevo_vuelo["capacidad": ""]:
+    if not nuevo_vuelo["capacidad"] or nuevo_vuelo["capacidad": ""]:
         nuevo_vuelo["capacidad"] = nuevo_vuelo["capacidad": 100]
-    if nuevo_vuelo["vendidos"] == nuevo_vuelo["vendidos": ""]:
+    if not nuevo_vuelo["vendidos"] or nuevo_vuelo["vendidos": ""]:
         nuevo_vuelo["vendidos"] = nuevo_vuelo["vendidos": 0]
     #agregar a la lista
     datos.append(nuevo_vuelo)
